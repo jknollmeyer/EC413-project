@@ -111,7 +111,7 @@ wire    clk,reset;
 //-------------Output Ports Data Type------------------
 reg     [OUTPUT_SIZE-1:0] output_signal;
 //-------------Internal Variables----------------------
-reg     [STATE_SIZE-1:0] state;      // Seq part of the FSM
+reg     [STATE_SIZE-1:0] state = 0;      // Seq part of the FSM
 wire    [STATE_SIZE-1:0] next_state; // Combo part of FSM
 
 //----------Code starts Here---------------------------
@@ -129,7 +129,7 @@ begin
 case(S)
 	S_IRFETCH: 
 		case(I)
-			I_NOOP: 		nextstate_func= S_IRFETCH;
+			//I_NOOP: 		nextstate_func= S_IRFETCH;
 			default: 	nextstate_func= S_IRDECODE;
 		endcase
 	S_IRDECODE:
