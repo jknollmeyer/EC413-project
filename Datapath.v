@@ -21,7 +21,7 @@
 module Datapath(
 	input clk,
 	input reset,
-	output[31:0] result
+	output[DATA_WIDTH-1:0] result
     );
 	 
 	/*Unused Signlans
@@ -37,8 +37,7 @@ module Datapath(
 								Instruction, 
 								IROut, 
 								MDROut, 
-								MemData, 
-								PCSourceOut,
+								MemData,
 								ReadData1, 
 								ReadData2,
 								DataRegAOut, 
@@ -51,7 +50,8 @@ module Datapath(
 	
 	// Wires containing address-wide bits
 	wire[ADDR_WIDTH-1:0] PCOut, 
-								PCMuxOut;
+								PCMuxOut, 
+								PCSourceOut;
 	
 	wire[4:0] RegWriteAddress;
 	
@@ -75,7 +75,7 @@ module Datapath(
 	wire[2:0] ALUOp;
 	
 	
-	reg ALUZero <= 0;
+	reg ALUZero = 0;
 	wire[16:0] fakeFSMOutput;
 	
 	and(PCWriteCond_AND_Zero, PCWriteCond, ALUZero);
@@ -89,7 +89,23 @@ module Datapath(
 		.input_signal(IROut[31:26]),
 		.reset(reset),
 		.clk(clk),
-		
+
+		.output_signal({
+			PCWriteCond,
+			PCWrite,
+			IorD,
+			MemRead,
+			MemWrite,
+			MemtoReg,
+			IRWrite,
+			PCSource,
+			ALUOp,
+			ALUSrcB,
+			ALUSrcA,
+			RegWrite,
+			RegDst
+		})
+		/*
 		.PCWriteCond(PCWriteCond),
 		.PCWrite(PCWrite),
 		.IorD(IorD),
@@ -102,7 +118,7 @@ module Datapath(
 		.ALUSrcB(ALUSrcB),
 		.ALUSrcA(ALUSrcA),
 		.RegWrite(RegWrite),
-		.RegDst(RegDst)
+		.RegDst(RegDst)*/
 	);
 	
 	// Program Counter
@@ -124,7 +140,7 @@ module Datapath(
 		
 	//Memory
 	IMem IMem(
-		.PC(PCOut),
+		.PC(PCMuxOut),
 		.Instruction(Instruction)
 	);
 	
@@ -230,7 +246,7 @@ module Datapath(
 	);
 	
 	//PCSource Mux
-	PCSourceMux PCSourceMux(
+	PCWriteSourceMux PCWriteSourceMux(
 		.PCSource(PCSource),
 		.ALUOut(ALUOut),
 		.ALURegisterOut(ALURegisterOut),
