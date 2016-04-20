@@ -42,11 +42,12 @@ module Datapath_tb;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		reset = 0;
+		reset = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
 		// Add stimulus here
+		reset = 0;
 		
 	end
       
