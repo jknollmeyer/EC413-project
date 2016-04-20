@@ -26,7 +26,7 @@ module InstructionAddressMux(
     );
 	parameter ADDR_WIDTH = 16;
 	parameter DATA_WIDTH = 32;
-	assign out = (IorD) ? PCOut : ALUOut[ADDR_WIDTH-1:0];
+	assign out = (IorD) ? ALUOut[ADDR_WIDTH-1:0] : PCOut;
 
 	
 endmodule
