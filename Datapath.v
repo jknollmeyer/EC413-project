@@ -72,18 +72,18 @@ module Datapath(
 			
 	wire[1:0] PCSource,
 					ALUSrcB;
-	wire[2:0] ALUOp;
-	
+	wire[1:0] ALUOp;
+	wire[3:0] Opcode;
 	
 	reg ALUZero = 0;
-	wire[16:0] fakeFSMOutput;
+	wire[15:0] fakeFSMOutput;
 	
 	and(PCWriteCond_AND_Zero, PCWriteCond, ALUZero);
 	or(PCWriteCond_AND_Zero_OR_PCWrite, PCWriteCond_AND_Zero, PCWrite);
 	
 	// Output the result from the ALUOut Register
 	assign result = ALURegisterOut;
-	
+	assign Opcode = IROut[29:26];
 	// controller
 	controller Control(
 		.input_signal(IROut[31:26]),
@@ -145,9 +145,9 @@ module Datapath(
 	);
 	
 	DMem DMem(
-		.WriteData(DataRegBOut),
+		.WriteData(ALUOut),
 		.MemData(MemData),
-		.Address(ALUOut[15:0]),
+		.Address(ALURegisterOut[15:0]),
 		.MemWrite(MemWrite),
 		.Clk(clk)
 	);
@@ -193,8 +193,8 @@ module Datapath(
 		.write_data(WriteDataMuxOut),
 		.read_data_1(ReadData1),
 		.read_data_2(ReadData2),
-		.read_sel_1(IROut[20:16]),
-		.read_sel_2(IROut[15:11]),
+		.read_sel_1(IROut[25:21]),
+		.read_sel_2(IROut[20:16]),
 		.write_address(RegWriteAddress),
 		.RegWrite(RegWrite),
 		.clk(clk)
@@ -235,7 +235,8 @@ module Datapath(
 		.R1(ALUOut),
 		.R2(SrcA),
 		.R3(SrcB),
-		.ALUOp(ALUOp)
+		.ALUOp(ALUOp),
+		.Opcode(Opcode)
 	);
 	
 	//ALUOut
