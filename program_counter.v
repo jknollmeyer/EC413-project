@@ -28,10 +28,14 @@ module program_counter(
 parameter ADDR_WIDTH = 16;
 
 initial begin
-	PCout <= 0;
+	PCout = 0;
 end
+
 always @(posedge clk) begin
-	if(PCWrite) PCout <= PCin;
+	if(reset)
+		PCout = 0;
+	if(PCWrite) 
+		PCout = PCin;
 end
 
 endmodule
