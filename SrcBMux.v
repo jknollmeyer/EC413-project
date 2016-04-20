@@ -26,7 +26,7 @@ module SrcBMux(
     );
 	parameter DATA_WIDTH = 32;
 	
-	assign out = ALUSrcB[1] && ~ALUSrcB[0] ? SignExtended :
+	assign out =  ALUSrcB[1] && ~ALUSrcB[0] ? SignExtended :
 					 ~ALUSrcB[1] && ALUSrcB[0] ? 32'd1 :
 					 ~ALUSrcB[1] && ~ALUSrcB[0] ? DataRegB : -1;
 
