@@ -33,21 +33,21 @@ module controller (
 );
 //-------------Internal Constants----------------------
 parameter INPUT_SIZE =  6;
-parameter OUTPUT_SIZE = 17;
+parameter OUTPUT_SIZE = 16;
 parameter STATE_SIZE =  4;
 //--- Parameters to describe States ---
-parameter S_IRFETCH=    	4'b0000;
-parameter S_IRDECODE=      4'b0001;
-parameter S_MEMCOMP=       4'b0010;
-parameter S_MEMACCESS3=    4'b0011;
-parameter S_WRITEBACK=     4'b0100;
-parameter S_MEMACCESS5=   	4'b0101;
-parameter S_EXECUTION=   	4'b0110;
-parameter S_RTYPECOMP=   	4'b0111;
-parameter S_BRANCHCOMP=   	4'b1000;
-parameter S_JUMPCOMP=   	4'b1001;
-parameter S_IEXECUTIONSE=   	4'b1010;
-parameter S_IEXECUTIONZE=   	4'b1011;
+parameter S_IRFETCH=    	4'b0000; //0
+parameter S_IRDECODE=      4'b0001; //1
+parameter S_MEMCOMP=       4'b0010; //2
+parameter S_MEMACCESS3=    4'b0011; //3
+parameter S_WRITEBACK=     4'b0100; //4
+parameter S_MEMACCESS5=   	4'b0101; //5
+parameter S_EXECUTION=   	4'b0110; //6
+parameter S_RTYPECOMP=   	4'b0111; //7
+parameter S_BRANCHCOMP=   	4'b1000; //8
+parameter S_JUMPCOMP=   	4'b1001; //9
+parameter S_IEXECUTIONSE=   	4'b1010; //10
+parameter S_IEXECUTIONZE=   	4'b1011; //11
 //--- Parameters to describe Input bit patterns ---
 
 parameter I_NOOP = 	6'b000000; //NOOP	
@@ -81,24 +81,25 @@ parameter I_SWI = 	6'b111100; //M[ZE(IMM)] <- R1 SWI
 //MemtoReg		1'b
 //IRWrite		1'b
 //PCSource		2'b
-//ALUOp			3'b
+//ALUOp			2'b
 //ALUSrcB		2'b
 //ALUSrcA		1'b	
 //RegWrite		1'b
 //RegDst			1'b
 
-parameter O_IRFETCH=    	17'b0_1_0_1_0_0_1_00_010_01_0_0_0;
-parameter O_IRDECODE=      17'b0_0_0_0_0_0_0_00_010_11_0_0_0;
-parameter O_MEMCOMP=       17'b0_0_0_0_0_0_0_00_000_11_1_0_0;
-parameter O_MEMACCESS3=    17'b0_0_1_1_0_0_0_00_000_00_0_0_0;
-parameter O_WRITEBACK=     17'b0_0_0_0_0_1_0_00_000_00_0_1_0;
-parameter O_MEMACCESS5=   	17'b0_0_1_0_1_0_0_00_000_00_0_0_0;
-parameter O_EXECUTION=   	5'b00_1_0_0;
-parameter O_RTYPECOMP=   	17'b0_0_0_0_0_0_0_00_000_00_0_1_0;
-parameter O_BRANCHCOMP=   	17'b1_0_0_0_0_0_0_01_000_00_1_0_0;
-parameter O_JUMPCOMP=   	17'b0_1_0_0_0_0_0_10_000_00_0_0_0;
-parameter O_IEXECUTIONSE=   	5'b10_1_0_0;
-parameter O_IEXECUTIONZE=   	5'b11_1_0_0;
+parameter O_IRFETCH=    	16'b0_1_0_1_0_0_1_00_00_01_0_0_0; // 0
+parameter O_IRDECODE=      16'b0_0_0_0_0_0_0_00_00_10_0_0_0; // 1
+parameter O_MEMCOMP=       16'b0_0_0_0_0_0_0_00_11_10_1_0_0; // 2
+parameter O_MEMACCESS3=    16'b0_0_1_1_0_0_0_00_00_00_0_0_0; // 3
+parameter O_WRITEBACK=     16'b0_0_0_0_0_1_0_00_00_00_0_1_0; // 4
+parameter O_MEMACCESS5=   	16'b0_0_1_0_1_0_0_00_10_10_1_0_0; // 5
+parameter O_EXECUTION=   	16'b0_0_0_0_0_0_0_00_10_00_1_0_0; // 6
+parameter O_RTYPECOMP=   	16'b0_0_0_0_0_0_0_00_00_00_0_1_0; // 7
+parameter O_BRANCHCOMP=   	16'b1_0_0_0_0_0_0_01_00_00_1_0_0; // 8
+parameter O_JUMPCOMP=   	16'b0_1_0_0_0_0_0_10_00_00_0_0_0; // 9
+
+parameter O_IEXECUTIONSE=  16'b0_0_0_0_0_0_0_00_10_10_1_0_0; // 10
+parameter O_IEXECUTIONZE=  16'b0_0_0_0_0_0_0_00_10_10_1_0_0;
   	
 //-------------Input Ports-----------------------------
 input   [INPUT_SIZE-1:0] input_signal;
@@ -212,7 +213,7 @@ endfunction // End Of nextstate_func
 always @ (state or reset)
 	begin : OUTPUT_LOGIC
 	if (reset == 1'b1) begin
-		output_signal= 17'd0;
+		output_signal= 16'd0;
 	end
 	else begin
 		case(state)
@@ -222,12 +223,12 @@ always @ (state or reset)
 			S_MEMACCESS3:    	output_signal=  O_MEMACCESS3;
 			S_WRITEBACK:      output_signal=  O_WRITEBACK;
 			S_MEMACCESS5:     output_signal=  O_MEMACCESS5;
-			S_EXECUTION:      output_signal=  {9'd0, input_signal[2:0], O_EXECUTION};
+			S_EXECUTION:      output_signal=  O_EXECUTION;
 			S_RTYPECOMP:      output_signal=  O_RTYPECOMP;
 			S_BRANCHCOMP:     output_signal=  O_BRANCHCOMP;
 			S_JUMPCOMP:       output_signal=  O_JUMPCOMP;
-			S_IEXECUTIONSE:     output_signal=  {9'd0, input_signal[2:0], O_IEXECUTIONSE};
-			S_IEXECUTIONZE:     output_signal=  {9'd0, input_signal[2:0], O_IEXECUTIONZE};
+			S_IEXECUTIONSE:   output_signal=  O_IEXECUTIONSE;
+			S_IEXECUTIONZE:   output_signal=  O_IEXECUTIONZE;
 			default:       	output_signal=  O_IRFETCH;
 			endcase
 	end
