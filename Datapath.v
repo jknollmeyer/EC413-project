@@ -23,10 +23,6 @@ module Datapath(
 	input reset,
 	output[DATA_WIDTH-1:0] result
     );
-	 
-	/*Unused Signlans
-	MemRead
-	*/
 	
 	parameter DATA_WIDTH = 32;
 	parameter ADDR_WIDTH = 16;
@@ -43,9 +39,11 @@ module Datapath(
 								DataRegAOut, 
 								DataRegBOut,
 								SignExtended, 
+								ZeroExtended,
 								SrcB, 
 								SrcA, 
-								WriteDataMuxOut; 
+								WriteDataMuxOut,
+								MDRIn; 
 	                     
 	
 	// Wires containing address-wide bits
@@ -64,7 +62,8 @@ module Datapath(
 			MemWrite, 
 			MemtoReg, 
 		   RegWrite, 
-			RegDst;
+			RegDst,
+			MemRead;
 	
 	// 1 bit wide wires for the PC Write gates
 	wire PCWriteCond_AND_Zero, 
@@ -145,7 +144,7 @@ module Datapath(
 	);
 	
 	DMem DMem(
-		.WriteData(ALUOut),
+		.WriteData(MDROut),
 		.MemData(MemData),
 		.Address(ALURegisterOut[15:0]),
 		.MemWrite(MemWrite),
@@ -156,7 +155,7 @@ module Datapath(
 	//MDR
 	MDR MDR(
 		.clk(clk),
-		.dataIn(MemData),
+		.dataIn(MDRIn),
 		.dataOut(MDROut)
 	);
 	
@@ -167,6 +166,7 @@ module Datapath(
 		.IROut(IROut),
 		.clk(clk)
 	);
+	
 	//MDR Mux
 	WriteDataMux WriteDataMux(
 		.MemtoReg(MemtoReg),
@@ -174,12 +174,19 @@ module Datapath(
 		.MDROut(MDROut),
 		.WriteData(WriteDataMuxOut)
 	);
+	MDRMux MDRMux(
+		.MemRead(MemRead),
+		.DMemOut(MemData),
+		.DataRegB(ReadData2),
+		.out(MDRIn)
+	);
 	
 	//Instruction sign extender FIX THIS
 	SignExtend SignExtend(
 		.in(IROut[15:0]),
 		.out(SignExtended)
 	);
+
 	// Register 2 Mux
 	wire[4:0] ReadSelect2;
 	Mux_2to1 ReadSelect2Mux(
@@ -188,6 +195,7 @@ module Datapath(
 		.isBranch(ALUOp[1]),
 		.out(ReadSelect2)
 	);
+
 	// WriteAddressMux
 	WriteAddressMux WriteAddressMux(
 		.R2(IROut[25:21]),
