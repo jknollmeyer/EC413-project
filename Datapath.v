@@ -23,10 +23,6 @@ module Datapath(
 	input reset,
 	output[DATA_WIDTH-1:0] result
     );
-	 
-	/*Unused Signlans
-	MemRead
-	*/
 	
 	parameter DATA_WIDTH = 32;
 	parameter ADDR_WIDTH = 16;
@@ -46,7 +42,8 @@ module Datapath(
 								ZeroExtended,
 								SrcB, 
 								SrcA, 
-								WriteDataMuxOut; 
+								WriteDataMuxOut,
+								MDRIn; 
 	                     
 	
 	// Wires containing address-wide bits
@@ -65,7 +62,8 @@ module Datapath(
 			MemWrite, 
 			MemtoReg, 
 		   RegWrite, 
-			RegDst;
+			RegDst,
+			MemRead;
 	
 	// 1 bit wide wires for the PC Write gates
 	wire PCWriteCond_AND_Zero, 
@@ -146,7 +144,7 @@ module Datapath(
 	);
 	
 	DMem DMem(
-		.WriteData(ALUOut),
+		.WriteData(MDROut),
 		.MemData(MemData),
 		.Address(ALURegisterOut[15:0]),
 		.MemWrite(MemWrite),
@@ -157,7 +155,7 @@ module Datapath(
 	//MDR
 	MDR MDR(
 		.clk(clk),
-		.dataIn(MemData),
+		.dataIn(MDRIn),
 		.dataOut(MDROut)
 	);
 	
@@ -168,12 +166,19 @@ module Datapath(
 		.IROut(IROut),
 		.clk(clk)
 	);
+	
 	//MDR Mux
 	WriteDataMux WriteDataMux(
 		.MemtoReg(MemtoReg),
 		.ALUOut(ALURegisterOut),
 		.MDROut(MDROut),
 		.WriteData(WriteDataMuxOut)
+	);
+	MDRMux MDRMux(
+		.MemRead(MemRead),
+		.DMemOut(MemData),
+		.DataRegB(ReadData2),
+		.out(MDRIn)
 	);
 	
 	//Instruction sign extender FIX THIS
