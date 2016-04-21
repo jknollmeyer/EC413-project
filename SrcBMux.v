@@ -22,12 +22,14 @@ module SrcBMux(
 	input[1:0] ALUSrcB,
 	input[DATA_WIDTH-1:0] DataRegB,
 	input[DATA_WIDTH-1:0] SignExtended,
+	input[DATA_WIDTH-1:0] ZeroExtended,
 	output[DATA_WIDTH-1:0] out
     );
 	parameter DATA_WIDTH = 32;
 	
 	assign out =  ALUSrcB[1] && ~ALUSrcB[0] ? SignExtended :
 					 ~ALUSrcB[1] && ALUSrcB[0] ? 32'd1 :
-					 ~ALUSrcB[1] && ~ALUSrcB[0] ? DataRegB : -1;
+					 ~ALUSrcB[1] && ~ALUSrcB[0] ? DataRegB :
+					  ALUSrcB[1] && ALUSrcB[0] ? ZeroExtended : -1;
 
 endmodule

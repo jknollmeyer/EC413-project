@@ -43,6 +43,7 @@ module Datapath(
 								DataRegAOut, 
 								DataRegBOut,
 								SignExtended, 
+								ZeroExtended,
 								SrcB, 
 								SrcA, 
 								WriteDataMuxOut; 
@@ -181,6 +182,12 @@ module Datapath(
 		.out(SignExtended)
 	);
 	
+	//Zero Extended
+	ZeroExtend DatapathZeroExtend(
+		.in(IROut[15:0]),
+		.out(ZeroExtended)
+	);
+	
 	// WriteAddressMux
 	WriteAddressMux DatapathWriteAddressMux(
 		.R2(IROut[25:21]),
@@ -226,6 +233,7 @@ module Datapath(
 		.ALUSrcB(ALUSrcB),
 		.DataRegB(DataRegBOut),
 		.SignExtended(SignExtended),
+		.ZeroExtended(ZeroExtended),
 		.out(SrcB)
 	);
 	

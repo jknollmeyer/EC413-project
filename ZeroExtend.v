@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    02:03:54 04/08/2016 
+// Create Date:    23:00:44 04/20/2016 
 // Design Name: 
-// Module Name:    SignExtend 
+// Module Name:    ZeroExtend 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,10 +18,10 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module SignExtend(
+module ZeroExtend(
 	input[(DATA_WIDTH/2)-1:0] in,
 	output[DATA_WIDTH-1:0] out
     );
 	parameter DATA_WIDTH = 32;
-	assign out = in[(DATA_WIDTH/2)-1] ? {16'b1111_1111_1111_1111, in} : {16'b0000_0000_0000_0000, in};
+	assign out = {16'b0000_0000_0000_0000, in};
 endmodule
