@@ -91,15 +91,15 @@ parameter O_IRFETCH=    	16'b0_1_0_1_0_0_1_00_00_01_0_0_0; // 0
 parameter O_IRDECODE=      16'b0_0_0_0_0_0_0_00_00_10_0_0_0; // 1
 parameter O_MEMCOMP=       16'b0_0_0_0_0_0_0_00_11_10_1_0_0; // 2
 parameter O_MEMACCESS3=    16'b0_0_1_1_0_0_0_00_00_00_0_0_0; // 3
-parameter O_WRITEBACK=     16'b0_0_0_0_0_1_0_00_00_00_0_1_0; // 4
-parameter O_MEMACCESS5=   	16'b0_0_1_0_1_0_0_00_10_10_1_0_0; // 5
-parameter O_EXECUTION=   	16'b0_0_0_0_0_0_0_00_10_00_1_0_0; // 6
+parameter O_WRITEBACK=     16'b0_0_0_0_0_1_0_00_01_00_0_1_0; // 4
+parameter O_MEMACCESS5=   	16'b0_0_1_0_1_0_0_00_01_10_1_0_0; // 5
+parameter O_EXECUTION=   	16'b0_0_0_0_0_0_0_00_01_00_1_0_0; // 6
 parameter O_RTYPECOMP=   	16'b0_0_0_0_0_0_0_00_00_00_0_1_0; // 7
-parameter O_BRANCHCOMP=   	16'b1_0_0_0_0_0_0_01_00_00_1_0_0; // 8
+parameter O_BRANCHCOMP=   	16'b1_0_0_0_0_0_0_01_10_11_1_0_0; // 8
 parameter O_JUMPCOMP=   	16'b0_1_0_0_0_0_0_10_00_00_0_0_0; // 9
 
-parameter O_IEXECUTIONSE=  16'b0_0_0_0_0_0_0_00_10_10_1_0_0; // 10
-parameter O_IEXECUTIONZE=  16'b0_0_0_0_0_0_0_00_10_10_1_0_0;
+parameter O_IEXECUTIONSE=  16'b0_0_0_0_0_0_0_00_01_10_1_0_0; // 10
+parameter O_IEXECUTIONZE=  16'b0_0_0_0_0_0_0_00_01_10_1_0_0;
   	
 //-------------Input Ports-----------------------------
 input   [INPUT_SIZE-1:0] input_signal;

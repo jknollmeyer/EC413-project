@@ -75,10 +75,10 @@ module Datapath(
 	wire[1:0] ALUOp;
 	wire[3:0] Opcode;
 	
-	reg ALUZero = 0;
+	wire ALUZero;
 	wire[15:0] fakeFSMOutput;
 	
-	and(PCWriteCond_AND_Zero, PCWriteCond, ALUZero);
+	and(PCWriteCond_AND_Zero, PCWriteCond, ~ALUZero);
 	or(PCWriteCond_AND_Zero_OR_PCWrite, PCWriteCond_AND_Zero, PCWrite);
 	
 	// Output the result from the ALUOut Register
@@ -131,7 +131,7 @@ module Datapath(
 	);
 	
 	//PC Mux
-	InstructionAddressMux PCMux(
+	InstructionAddressMux PCtoIRMux(
 		.IorD(IorD),
 		.PCOut(PCOut),
 		.ALUOut(ALUOut),
@@ -176,25 +176,32 @@ module Datapath(
 	);
 	
 	//Instruction sign extender FIX THIS
-	SignExtend DatapathSignExtend(
+	SignExtend SignExtend(
 		.in(IROut[15:0]),
 		.out(SignExtended)
 	);
-	
+	// Register 2 Mux
+	wire[4:0] ReadSelect2;
+	Mux_2to1 ReadSelect2Mux(
+		.R1(IROut[25:21]),
+		.R3(IROut[15:11]),
+		.isBranch(ALUOp[1]),
+		.out(ReadSelect2)
+	);
 	// WriteAddressMux
-	WriteAddressMux DatapathWriteAddressMux(
+	WriteAddressMux WriteAddressMux(
 		.R2(IROut[25:21]),
 		.R3(IROut[20:16]),
 		.RegDst(RegDst),
 		.WriteRegister(RegWriteAddress)
 	);
 	//Register File
-	nbit_register_file DatapathRegisterFile(
+	nbit_register_file RegisterFile(
 		.write_data(WriteDataMuxOut),
 		.read_data_1(ReadData1),
 		.read_data_2(ReadData2),
-		.read_sel_1(IROut[25:21]),
-		.read_sel_2(IROut[20:16]),
+		.read_sel_1(IROut[20:16]),
+		.read_sel_2(ReadSelect2),
 		.write_address(RegWriteAddress),
 		.RegWrite(RegWrite),
 		.clk(clk)
@@ -214,18 +221,18 @@ module Datapath(
 		.out(DataRegBOut)
 	);
 	//SrcA Mux
-	SrcAMux DatapathSrcAMux(
+	SrcAMux SrcAMux(
 		.ALUSrcA(ALUSrcA),
 		.PCOut(PCOut),
 		.DataRegA(DataRegAOut),
 		.out(SrcA)
 	);
 	//SrcB Mux
-	// WHAT'S THE FOURTH INPUT LINE?
-	SrcBMux DatapathSrcBMux(
+	SrcBMux SrcBMux(
 		.ALUSrcB(ALUSrcB),
 		.DataRegB(DataRegBOut),
 		.SignExtended(SignExtended),
+		.Register2FastTrack(ReadData2),
 		.out(SrcB)
 	);
 	
@@ -236,7 +243,8 @@ module Datapath(
 		.R2(SrcA),
 		.R3(SrcB),
 		.ALUOp(ALUOp),
-		.Opcode(Opcode)
+		.Opcode(Opcode),
+		.Zero(ALUZero)
 	);
 	
 	//ALUOut

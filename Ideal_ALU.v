@@ -38,7 +38,7 @@ module Ideal_ALU(R1, R2, R3, ALUOp, Opcode, Zero);
 			2'b00:
 				R1 = R2 + R3; 
 			// 01 Always SUB
-			2'b01:
+			2'b10:
 				R1 = R2 - R3;
 			
 			
@@ -66,10 +66,11 @@ module Ideal_ALU(R1, R2, R3, ALUOp, Opcode, Zero);
 			
 			
 			// 10 Check the opcode
-			2'b10:
+			2'b01:
 				// R3 in this case is a SE(Imm) or ZE(Imm)
 				case(Opcode)
 					4'b0000: R1 = R2;
+					4'b0001: R1 = ~R2; //NOT
 					4'b0010: R1 = R2 + R3; //ADDI
 					4'b0011: R1 = R2 - R3; //SUBI
 					4'b0100: R1 = R2 | R3; //ORI
