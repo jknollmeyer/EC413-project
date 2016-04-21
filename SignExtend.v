@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module SignExtend(
+module SignZeroExtend(
 	input[(DATA_WIDTH/2)-1:0] in,
 	output[DATA_WIDTH-1:0] out
     );

@@ -38,8 +38,7 @@ module Datapath(
 								ReadData2,
 								DataRegAOut, 
 								DataRegBOut,
-								SignExtended, 
-								ZeroExtended,
+								ImmExtended,
 								SrcB, 
 								SrcA, 
 								WriteDataMuxOut,
@@ -182,9 +181,9 @@ module Datapath(
 	);
 	
 	//Instruction sign extender FIX THIS
-	SignExtend SignExtend(
+	SignZeroExtend SignZeroExtend(
 		.in(IROut[15:0]),
-		.out(SignExtended)
+		.out(ImmExtended)
 	);
 
 	// Register 2 Mux
@@ -239,7 +238,7 @@ module Datapath(
 	SrcBMux SrcBMux(
 		.ALUSrcB(ALUSrcB),
 		.DataRegB(DataRegBOut),
-		.SignExtended(SignExtended),
+		.SignExtended(ImmExtended),
 		.Register2FastTrack(ReadData2),
 		.out(SrcB)
 	);
