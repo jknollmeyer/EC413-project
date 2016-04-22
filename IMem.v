@@ -16,7 +16,7 @@
 //              and corner cases.
 // - PROGRAM_3: optional LW/SW program.
 //
-`define PROGRAM_2 // <<<<<<<<<<<< CHANGE TEST PROGRAM HERE!
+`define PROGRAM_3 // <<<<<<<<<<<< CHANGE TEST PROGRAM HERE!
 //
 // Change the previous line to try a different program,
 // when available.
@@ -109,15 +109,21 @@ case(PC)
 `ifdef PROGRAM_2
 //-----------------------------------------------------
 // NOOP
-	0: Instruction=  32'b000000_00000_00000_1111111111111101;
-	1: Instruction=  32'b110010_00001_00001_0000000000000001;
-	2: Instruction=  32'b100011_00000_00000_0000000000000001; //BLE
+	0: Instruction=  32'b000000_00000_00000_0000000000000000;
+	1: Instruction=  32'b110010_00010_00010_0000000000000111;
+	2: Instruction=  32'b110010_00001_00001_0000000000000001;
+	3: Instruction=  32'b100010_00010_00001_1111111111111110; //BLT
 	
 `else
 //-----------------------------------------------------
 `ifdef PROGRAM_3
 //-----------------------------------------------------
 
+// NOOP
+	0: Instruction=  32'b000000_00000_00000_0000000000000000;
+	1: Instruction=  32'b110010_00010_00010_0000000000000111;
+	2: Instruction=  32'b110010_00001_00001_0000000000000001;
+	3: Instruction=  32'b100011_00010_00001_1111111111111110; //BLE
 
 `endif
 `endif
