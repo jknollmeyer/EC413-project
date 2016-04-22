@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="62" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/Datapath_tb/result" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">result[31:0]</obj_property>
       <obj_property name="ObjectShortName">result[31:0]</obj_property>
@@ -24,42 +24,96 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="divider24" type="divider">
-      <obj_property name="label">Control Signals</obj_property>
+   <wvobject fp_name="group133" type="group">
+      <obj_property name="label">State Signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/Control/input_signal" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">input_signal[5:0]</obj_property>
-      <obj_property name="ObjectShortName">input_signal[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/Control/output_signal" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">output_signal[15:0]</obj_property>
-      <obj_property name="ObjectShortName">output_signal[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/Control/state" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">state[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IMem/PC" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PC[15:0]</obj_property>
-      <obj_property name="ObjectShortName">PC[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IMem/Instruction" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IROut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">IROut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IROut[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/Control/next_state" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+      <wvobject fp_name="divider24" type="divider">
+         <obj_property name="label">Control Signals</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/Control/input_signal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">input_signal[5:0]</obj_property>
+         <obj_property name="ObjectShortName">input_signal[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/Control/output_signal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">output_signal[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output_signal[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/Control/state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IMem/PC" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PC[15:0]</obj_property>
+         <obj_property name="ObjectShortName">PC[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IMem/Instruction" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IROut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">IROut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IROut[31:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="vbus217" type="vbus" db_ref_id="1">
+         <obj_property name="label">R2</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[20]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[20]</obj_property>
+            <obj_property name="ObjectShortName">IROut[20]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[19]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[19]</obj_property>
+            <obj_property name="ObjectShortName">IROut[19]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[18]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[18]</obj_property>
+            <obj_property name="ObjectShortName">IROut[18]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[17]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[17]</obj_property>
+            <obj_property name="ObjectShortName">IROut[17]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[16]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[16]</obj_property>
+            <obj_property name="ObjectShortName">IROut[16]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="vbus218" type="vbus" db_ref_id="1">
+         <obj_property name="label">R3</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[25]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[25]</obj_property>
+            <obj_property name="ObjectShortName">IROut[25]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[24]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[24]</obj_property>
+            <obj_property name="ObjectShortName">IROut[24]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[23]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[23]</obj_property>
+            <obj_property name="ObjectShortName">IROut[23]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[22]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[22]</obj_property>
+            <obj_property name="ObjectShortName">IROut[22]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/IROut[21]" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">[21]</obj_property>
+            <obj_property name="ObjectShortName">IROut[21]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/Control/next_state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group111" type="group">
       <obj_property name="label">Control Signals</obj_property>
@@ -117,245 +171,527 @@
          <obj_property name="ObjectShortName">PCSource[1:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="divider66" type="divider">
+   <wvobject fp_name="group107" type="group">
       <obj_property name="label">Registers</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider66" type="divider">
+         <obj_property name="label">Registers</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/write_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/read_sel_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">read_sel_1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">read_sel_1[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/read_sel_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">read_sel_2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">read_sel_2[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/write_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">write_address[4:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/read_data_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">read_data_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/read_data_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">read_data_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">register_file[0:31,31:0]</obj_property>
+         <obj_property name="ObjectShortName">register_file[0:31,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[0]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[0,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[0,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[1]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[1,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[1,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[2]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[2,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[2,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[3]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[3,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[3,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[4]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[4,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[4,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[5]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[5,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[5,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[6]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[6,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[6,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[7]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[7,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[7,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[8]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[8,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[8,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[9]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[9,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[9,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[10]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[10,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[10,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[11]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[11,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[11,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[12]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[12,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[12,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[13]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[13,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[13,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[14]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[14,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[14,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[15]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[15,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[15,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[16]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[16,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[16,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[17]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[17,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[17,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[18]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[18,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[18,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[19]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[19,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[19,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[20]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[20,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[20,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[21]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[21,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[21,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[22]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[22,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[22,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[23]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[23,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[23,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[24]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[24,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[24,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[25]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[25,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[25,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[26]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[26,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[26,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[27]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[27,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[27,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[28]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[28,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[28,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[29]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[29,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[29,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[30]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[30,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[30,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/RegisterFile/register_file[31]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[31,31:0]</obj_property>
+            <obj_property name="ObjectShortName">register_file[31,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/write_data" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/RegWrite" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">RegWrite</obj_property>
-      <obj_property name="ObjectShortName">RegWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/read_sel_1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">read_sel_1[4:0]</obj_property>
-      <obj_property name="ObjectShortName">read_sel_1[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/read_sel_2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">read_sel_2[4:0]</obj_property>
-      <obj_property name="ObjectShortName">read_sel_2[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/write_address" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">write_address[4:0]</obj_property>
-      <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/read_data_1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">read_data_1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">read_data_1[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/read_data_2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">read_data_2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">read_data_2[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathRegisterFile/register_file" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">register_file[0:31,31:0]</obj_property>
-      <obj_property name="ObjectShortName">register_file[0:31,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider23" type="divider">
+   <wvobject fp_name="group128" type="group">
       <obj_property name="label">ALU Output</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider23" type="divider">
+         <obj_property name="label">ALU Output</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/ALUOp" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/Opcode" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Opcode[3:0]</obj_property>
+         <obj_property name="ObjectShortName">Opcode[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/ALUOut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/ALURegisterOut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ALURegisterOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALURegisterOut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/SrcB" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SrcB[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SrcB[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/SrcA" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SrcA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SrcA[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/ALU/Zero" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">Zero</obj_property>
+         <obj_property name="ObjectShortName">Zero</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/ALUOp" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/Opcode" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">Opcode[3:0]</obj_property>
-      <obj_property name="ObjectShortName">Opcode[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/ALUOut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/ALURegisterOut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALURegisterOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALURegisterOut[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/SrcB" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">SrcB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SrcB[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/SrcA" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">SrcA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SrcA[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider25" type="divider">
+   <wvobject fp_name="group129" type="group">
       <obj_property name="label">Data Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider25" type="divider">
+         <obj_property name="label">Data Memory</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/DMem/MemData" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">MemData[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MemData[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">mem_contents[15:0,31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_contents[15:0,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[15]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[15,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[15,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[14]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[14,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[14,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[13]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[13,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[13,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[12]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[12,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[12,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[11]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[11,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[11,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[10]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[10,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[10,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[9]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[9,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[9,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[8]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[8,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[8,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[7]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[7,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[7,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[6]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[6,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[6,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[5]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[5,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[5,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[4]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[4,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[4,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[3]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[3,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[3,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[2]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[2,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[2,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[1]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[1,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[1,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents[0]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[0,31:0]</obj_property>
+            <obj_property name="ObjectShortName">mem_contents[0,31:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/DMem/Address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Address[15:0]</obj_property>
+         <obj_property name="ObjectShortName">Address[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/DMem/WriteData" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/DMem/MemWrite" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">MemWrite</obj_property>
+         <obj_property name="ObjectShortName">MemWrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/MemRead" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">MemRead</obj_property>
+         <obj_property name="ObjectShortName">MemRead</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DMem/MemData" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">MemData[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MemData[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DMem/mem_contents" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">mem_contents[15:0,31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_contents[15:0,31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DMem/Address" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">Address[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Address[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DMem/WriteData" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DMem/MemWrite" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">MemWrite</obj_property>
-      <obj_property name="ObjectShortName">MemWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/MemRead" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">MemRead</obj_property>
-      <obj_property name="ObjectShortName">MemRead</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider33" type="divider">
-      <obj_property name="label">Instructions </obj_property>
+   <wvobject fp_name="group130" type="group">
+      <obj_property name="label">Instructions</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider33" type="divider">
+         <obj_property name="label">Instructions </obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IROut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">IROut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IROut[31:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/PC/PCout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PCout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">PCout[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IR/InstructionIn" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">InstructionIn[31:0]</obj_property>
+         <obj_property name="ObjectShortName">InstructionIn[31:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IROut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">IROut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IROut[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/SignExtended" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">SignExtended[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SignExtended[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PC/PCout" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PCout[15:0]</obj_property>
-      <obj_property name="ObjectShortName">PCout[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IR/InstructionIn" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">InstructionIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">InstructionIn[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider128" type="divider">
+   <wvobject fp_name="group149" type="group">
       <obj_property name="label">PC</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider128" type="divider">
+         <obj_property name="label">PC</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/PC/PCin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PCin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">PCin[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/PC/PCout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PCout[15:0]</obj_property>
+         <obj_property name="ObjectShortName">PCout[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/PC/PCWrite" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PCWrite</obj_property>
+         <obj_property name="ObjectShortName">PCWrite</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PCMux/IorD" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">IorD</obj_property>
-      <obj_property name="ObjectShortName">IorD</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PCMux/ALUOut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PC/PCin" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PCin[15:0]</obj_property>
-      <obj_property name="ObjectShortName">PCin[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PC/PCWrite" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">PCWrite</obj_property>
-      <obj_property name="ObjectShortName">PCWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PCMux/PCOut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PCOut[15:0]</obj_property>
-      <obj_property name="ObjectShortName">PCOut[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PCMux/out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">out[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider93" type="divider">
+   <wvobject fp_name="group148" type="group">
       <obj_property name="label">IMem</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider93" type="divider">
+         <obj_property name="label">IMem</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IMem/Instruction" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IMem/PC" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PC[15:0]</obj_property>
+         <obj_property name="ObjectShortName">PC[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IMem/Instruction" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IMem/PC" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PC[15:0]</obj_property>
-      <obj_property name="ObjectShortName">PC[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider83" type="divider">
+   <wvobject fp_name="group132" type="group">
       <obj_property name="label">MemToReg Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider83" type="divider">
+         <obj_property name="label">MemToReg Mux</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/WriteData" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MDROut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">MDROut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MDROut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/ALUOut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MemtoReg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">MemtoReg</obj_property>
+         <obj_property name="ObjectShortName">MemtoReg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/IR/IRWrite" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">IRWrite</obj_property>
+         <obj_property name="ObjectShortName">IRWrite</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/WriteData" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MDROut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">MDROut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MDROut[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/ALUOut" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MemtoReg" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">MemtoReg</obj_property>
-      <obj_property name="ObjectShortName">MemtoReg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/IR/IRWrite" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">IRWrite</obj_property>
-      <obj_property name="ObjectShortName">IRWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/PCMux/IorD" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">IorD</obj_property>
-      <obj_property name="ObjectShortName">IorD</obj_property>
-   </wvobject>
-   <wvobject fp_name="divider110" type="divider">
-      <obj_property name="label">SrcB Mux</obj_property>
+   <wvobject fp_name="group131" type="group">
+      <obj_property name="label">ALU SrcB Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="BkColor">128 128 255</obj_property>
-      <obj_property name="TextColor">230 230 230</obj_property>
+      <wvobject fp_name="divider110" type="divider">
+         <obj_property name="label">SrcB Mux</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/SrcBMux/SignExtended" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SignExtended[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SignExtended[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/SrcBMux/DataRegB" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DataRegB[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DataRegB[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/SrcBMux/out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">out[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathSrcBMux/ALUSrcB" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALUSrcB[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrcB[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathSrcBMux/SignExtended" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">SignExtended[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SignExtended[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathSrcBMux/DataRegB" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">DataRegB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DataRegB[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Datapath_tb/uut/DatapathSrcBMux/out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+   <wvobject fp_name="group147" type="group">
+      <obj_property name="label">MDR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="divider143" type="divider">
+         <obj_property name="label">MDR</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">128 128 255</obj_property>
+         <obj_property name="TextColor">230 230 230</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/MDR/dataIn" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dataIn[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/MDR/dataOut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dataOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MemtoReg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">MemtoReg</obj_property>
+         <obj_property name="ObjectShortName">MemtoReg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/MDROut" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">MDROut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MDROut[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Datapath_tb/uut/WriteDataMux/WriteData" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>
