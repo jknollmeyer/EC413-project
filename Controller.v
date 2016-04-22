@@ -61,6 +61,8 @@ parameter I_XOR = 	6'b010110; //R1 = R2 ^ R3 XOR
 parameter I_SLT = 	6'b010111; //R1	= 1 if R2 < R3, else 0 SLT
 parameter I_J = 		6'b000001; //PC <- PC[31:26] || Limm J
 parameter I_BNE = 	6'b100001; //IF (R1 != R2) THEN PC <- PC + SE(Imm) BNE ELSE PC <- PC + 1
+parameter I_BLT = 	6'b100010; //IF (R1 < R2) THEN PC <- PC + SE(Imm) BlT ELSE PC <- PC + 1
+parameter I_BLE = 	6'b100011; //IF (R1 <= R2) THEN PC <- PC + SE(Imm) BlE ELSE PC <- PC + 1
 parameter I_ADDI = 	6'b110010; //R1 = R2 + SE(Imm) ADDI
 parameter I_SUBI = 	6'b110011; //R1 = R2 - SE(Imm) SUBI
 parameter I_ORI = 	6'b110100; //R1 = R2 | ZE(Imm) ORI
@@ -69,6 +71,7 @@ parameter I_XORI = 	6'b110110; //R1	= R2 ^ ZE(Imm) XORI
 parameter I_SLTI = 	6'b110111; //R1 = 1 if R2 < SE(Imm), else 0 SLTI
 parameter I_LI = 		6'b111001; //R1[15:0] <- ZE(Imm) LI
 parameter I_LWI = 	6'b111011; //R1 <- M[ZE(Imm)] LWI
+parameter I_LW = 		6'b111101; //R1 <- M[R2] + SE(IMM) LW
 parameter I_SWI = 	6'b111100; //M[ZE(IMM)] <- R1 SWI
 
 //--- Parameters to describe Output bit patterns ---
@@ -146,6 +149,8 @@ case(S)
 			I_SLT:    	nextstate_func= S_EXECUTION;
 			I_J:    		nextstate_func= S_JUMPCOMP;
 			I_BNE:    	nextstate_func= S_BRANCHCOMP;
+			I_BLT:    	nextstate_func= S_BRANCHCOMP;
+			I_BLE:    	nextstate_func= S_BRANCHCOMP;
 			I_ADDI:    	nextstate_func= S_IEXECUTIONSE;
 			I_SUBI:    	nextstate_func= S_IEXECUTIONSE;
 			I_ORI:    	nextstate_func= S_IEXECUTIONZE;
@@ -154,6 +159,7 @@ case(S)
 			I_SLTI:    	nextstate_func= S_IEXECUTIONZE;
 			I_LI:    	nextstate_func= S_MEMCOMP;
 			I_LWI:   	nextstate_func= S_MEMCOMP;
+			I_LW:   		nextstate_func= S_MEMCOMP;
 			I_SWI:    	nextstate_func= S_MEMCOMP;
 			default:		nextstate_func= S_IRFETCH;
 		endcase
@@ -161,12 +167,14 @@ case(S)
 		case(I)
 			I_LI:    	nextstate_func= S_RTYPECOMP;
 			I_LWI:   	nextstate_func= S_MEMACCESS3;
+			I_LW:   		nextstate_func= S_MEMACCESS3;
 			I_SWI:    	nextstate_func= S_MEMACCESS5;
 			default:    nextstate_func= S_IRFETCH;
 		endcase
 	S_MEMACCESS3: 
 		case(I)
 			I_LWI:   	nextstate_func= S_WRITEBACK;
+			I_LW:   		nextstate_func= S_WRITEBACK;
 			default:    nextstate_func= S_IRFETCH;
 		endcase
 	S_WRITEBACK: 		nextstate_func= S_IRFETCH;

@@ -76,7 +76,7 @@ module Datapath(
 	wire ALUZero;
 	wire[15:0] fakeFSMOutput;
 	
-	and(PCWriteCond_AND_Zero, PCWriteCond, ~ALUZero);
+	and(PCWriteCond_AND_Zero, PCWriteCond, ALUZero);
 	or(PCWriteCond_AND_Zero_OR_PCWrite, PCWriteCond_AND_Zero, PCWrite);
 	
 	// Output the result from the ALUOut Register

@@ -28,8 +28,8 @@ module Ideal_ALU(R1, R2, R3, ALUOp, Opcode, Zero);
 	output reg [word_size-1:0] R1;	// Note: R1 here is not a D-flip-flop. It just declares a variable here.
 												//       a "reg" without the "always @ (posedge clk)" is not a D-flip-flop.
 
- output Zero;
- assign Zero = R2 - R3 == 32'd0 ? 1 : 0;
+ output reg Zero;
+ //assign Zero = R2 - R3 == 32'd0 ? 1 : 0;
  always @ (R1, R2, R3, ALUOp, Opcode)				// When any of R2, R3, ALUOp changes, R1 will change. 
 	// ---- ideal ALU ------	
 	begin
@@ -39,7 +39,25 @@ module Ideal_ALU(R1, R2, R3, ALUOp, Opcode, Zero);
 				R1 = R2 + R3; 
 			// 01 Always SUB
 			2'b10:
-				R1 = R2 - R3;
+				case(Opcode)
+					4'b0001: 
+					begin 
+					R1 = R2 - R3; 
+					Zero = R2 - R3 == 32'd0 ? 0 : 1; 
+					end //BEQ
+					4'b0010: 
+					begin 
+					R1 = (($signed(R2) < $signed(R3))? 1:0); 
+					Zero = (($signed(R2) < $signed(R3))? 1:0); 
+					end //BLT
+					4'b0011: 
+					begin 
+					R1 = (($signed(R2) <= $signed(R3))? 1:0); 
+					Zero = (($signed(R2) <= $signed(R3))? 1:0); 
+					end//BLE
+					default: R1 = -1;
+				endcase
+				
 			
 			
 			/*

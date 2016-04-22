@@ -16,7 +16,7 @@
 //              and corner cases.
 // - PROGRAM_3: optional LW/SW program.
 //
-`define PROGRAM_1 // <<<<<<<<<<<< CHANGE TEST PROGRAM HERE!
+`define PROGRAM_2 // <<<<<<<<<<<< CHANGE TEST PROGRAM HERE!
 //
 // Change the previous line to try a different program,
 // when available.
@@ -29,7 +29,7 @@ module IMem(PC,          // PC (address) of instruction in IMem
 	parameter PROG_LENGTH= 26;
 `else
 `ifdef PROGRAM_2
-	parameter PROG_LENGTH= 1;
+	parameter PROG_LENGTH= 3;
 `else
 `ifdef PROGRAM_3
 	parameter PROG_LENGTH= 1;
@@ -108,7 +108,10 @@ case(PC)
 //-----------------------------------------------------
 `ifdef PROGRAM_2
 //-----------------------------------------------------
-
+// NOOP
+	0: Instruction=  32'b000000_00000_00000_1111111111111101;
+	1: Instruction=  32'b110010_00001_00001_0000000000000001;
+	2: Instruction=  32'b100011_00000_00000_0000000000000001; //BLE
 	
 `else
 //-----------------------------------------------------
