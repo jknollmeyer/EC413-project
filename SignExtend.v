@@ -20,8 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 module SignZeroExtend(
 	input[(DATA_WIDTH/2)-1:0] in,
+	input ZeroOrSign,
 	output[DATA_WIDTH-1:0] out
     );
 	parameter DATA_WIDTH = 32;
-	assign out = in[(DATA_WIDTH/2)-1] ? {16'b1111_1111_1111_1111, in} : {16'b0000_0000_0000_0000, in};
+	assign out = ~ZeroOrSign && in[(DATA_WIDTH/2)-1] ? {16'b1111_1111_1111_1111, in} : {16'b0000_0000_0000_0000, in};				 ;
 endmodule

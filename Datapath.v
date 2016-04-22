@@ -62,7 +62,8 @@ module Datapath(
 			MemtoReg, 
 		   RegWrite, 
 			RegDst,
-			MemRead;
+			MemRead,
+			ZeroOrSign;
 	
 	// 1 bit wide wires for the PC Write gates
 	wire PCWriteCond_AND_Zero, 
@@ -89,6 +90,7 @@ module Datapath(
 		.clk(clk),
 
 		.output_signal({
+			ZeroOrSign,
 			PCWriteCond,
 			PCWrite,
 			IorD,
@@ -183,6 +185,7 @@ module Datapath(
 	//Instruction sign extender FIX THIS
 	SignZeroExtend SignZeroExtend(
 		.in(IROut[15:0]),
+		.ZeroOrSign(ZeroOrSign),
 		.out(ImmExtended)
 	);
 

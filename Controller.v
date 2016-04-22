@@ -33,7 +33,7 @@ module controller (
 );
 //-------------Internal Constants----------------------
 parameter INPUT_SIZE =  6;
-parameter OUTPUT_SIZE = 16;
+parameter OUTPUT_SIZE = 17;
 parameter STATE_SIZE =  4;
 //--- Parameters to describe States ---
 parameter S_IRFETCH=    	4'b0000; //0
@@ -76,6 +76,7 @@ parameter I_SWI = 	6'b111100; //M[ZE(IMM)] <- R1 SWI
 
 //--- Parameters to describe Output bit patterns ---
 
+//ZeroOrSign   1'b
 //PCWriteCond	1'b
 //PCWrite		1'b
 //IorD			1'b
@@ -101,8 +102,8 @@ parameter O_RTYPECOMP=   	16'b0_0_0_0_0_0_0_00_00_00_0_1_0; // 7
 parameter O_BRANCHCOMP=   	16'b1_0_0_0_0_0_0_01_10_11_1_0_0; // 8
 parameter O_JUMPCOMP=   	16'b0_1_0_0_0_0_0_10_00_00_0_0_0; // 9
 
-parameter O_IEXECUTIONSE=  16'b0_0_0_0_0_0_0_00_01_10_1_0_0; // 10
-parameter O_IEXECUTIONZE=  16'b0_0_0_0_0_0_0_00_01_10_1_0_0;
+parameter O_IEXECUTIONSE=  17'b0_0_0_0_0_0_0_0_00_01_10_1_0_0; // 10
+parameter O_IEXECUTIONZE=  17'b1_0_0_0_0_0_0_0_00_01_10_1_0_0; 
   	
 //-------------Input Ports-----------------------------
 input   [INPUT_SIZE-1:0] input_signal;
